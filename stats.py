@@ -9,3 +9,13 @@ def num_letters(words):
         else:
             char_count[char] = 1
     return char_count
+
+def sort_on(dict):
+    return dict["num"]
+
+def dict_to_sorted_list(letter_count):
+    sorted_list =[]
+    for letter in letter_count:
+        sorted_list.append({"char": letter, "num": letter_count[letter]})
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
