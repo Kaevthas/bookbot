@@ -1,7 +1,16 @@
-from stats import num_words, num_letters, dict_to_sorted_list
+import sys
+from stats import (
+    num_words,
+    num_letters,
+    dict_to_sorted_list
+)
 
 def main():
-    path = "books/frankenstein.txt"
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    path = sys.argv[1]
+
     book_string = get_book_text(path)
     word_count = num_words(book_string)
     letter_count = num_letters(book_string)
