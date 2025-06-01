@@ -8,6 +8,7 @@ def main():
     sorted_list = dict_to_sorted_list(letter_count)
     print_result(path, word_count, sorted_list)
 
+# opens the book file from a path and reads the eniter content into a string
 def get_book_text(content_path):
     with open(content_path) as f:
         return f.read()
